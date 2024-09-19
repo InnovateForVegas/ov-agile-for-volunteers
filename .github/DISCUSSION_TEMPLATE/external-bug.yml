@@ -1,0 +1,154 @@
+# Copyright (C) 2024 Innovate for Vegas Foundation
+# 
+# This file is part of doc-agile-for-volunteers.
+# 
+# doc-agile-for-volunteers is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# doc-agile-for-volunteers is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with doc-agile-for-volunteers.  If not, see <https://www.gnu.org/licenses/>.
+---
+title: "[External Bug]: Edit title after colon"
+labels:
+  - extern
+  - bug
+  - cp-ov
+  - triage
+body:
+  - type: markdown
+    id: discussion_head_title
+    attributes:
+      value: "# External Bug"
+
+  - type: markdown
+    id: discussion_head_description
+    attributes:
+      value: |
+        Please use this Discussion Category to describe an issue, problem, or defect
+        you have encountered using one or more components of this Initiative.
+
+        One Initiative is composed of several component projects and other moving parts,
+        there is no reason you should need to dive in to the inner workings to report
+        some finding… you are using GitHub, though, which means you are a bit closer to
+        the structure and inner workings than most.
+
+        Thus the term, *External*.
+
+        Please take a moment to fill this in, your GitHub credentials will be used to
+        attribute your contribution to this initiative unless you would rather opt out.
+
+  - type: markdown
+    id: discussion_shortdesc_title
+    attributes:
+      value: "## Short Description"
+
+  - type: markdown
+    id: discussion_shortdesc_description
+    attributes:
+      value: |
+        The text entered here will be visible via mouse over in GitHub issue summary views
+        and may be extracted with automated tools for other uses.
+
+        Please be succinct, one paragraph.
+        
+  - type: textarea
+    id: shortdesc
+    attributes:
+      label: Brief Description
+      description: Augments the issue title with an extended description
+
+    validations:
+      required: true
+
+  - type: markdown
+    id: discussion_characterization_title
+    attributes:
+      value: "## Characterization" 
+
+  - type: markdown
+    id: discussion_characterization_description
+    attributes:
+      value: |
+
+        So that we can assess severity and priority scores, select at least one
+        of each item in the checkbox blocks below, for Observations and for
+        Frequency.
+
+        If you have more detail for these, please include it down below.
+
+  - type: markdown
+    id: observations
+    attributes:
+      label: Observations
+      description: Types of problems or failures observed
+      options:
+        - label: "Data Loss or Destructive Failure"
+        - label: "Crash or other self-contained Failure"
+        - label: "Unexpected behavior"
+        - label: "Explicitly incorrect behavior"
+        - label: "Does not meet expectations"
+        - label: "Untestable"
+        - label: "Cosmetic failure"
+        - label: "Security failure"
+        - label: "Privacy failure"
+
+  - type: markdown
+    id: frequency
+    attributes:
+      label: Frequency
+      description: Reproducing the observations
+      options:
+        - label: "Observed nearly 100% of the time"
+        - label: "Frequently but not consistently"
+        - label: "Infrequently but observable"
+        - label: "Difficult to observe, for unknown reasons"
+        - label: "Seems to depend on external factors"
+
+  - type: markdown
+    id: discussion_usertype_title
+    attributes:
+      value: "## Me as User"
+
+  - type: checkboxes
+    id: usertype
+    attributes:
+      label: User Type (As a …)
+      description: Use context in which this bug was encountered
+      options:
+        - label: "**Unknown** user type, possibly not provided"
+        - label: "**Initiative Maintainer** Manages Initiatives and related elements"
+        - label: "**Initiative Member** Participates in Initiative as Whole Team member"
+        - label: "**Component Project Maintainer** Manages Component Projects and related elements"
+        - label: "**Component Project Member** Participates in Component Projects as Whole Team Member"
+        - label: "**Persistent Team Member** Participates on a regular ongoing basis"
+        - label: "**Atomic Team Member** Participates on irregular basis"
+        - label: "**External Contributor** Not a formal member of any Whole Team"
+        - label: "**Customer** Adopter of Agile for Volunteers"
+        - label: "**Curious User** Checking out Agile for Volunteers"
+        - label: "**Any or All** user types listed above"
+
+
+  - type: markdown
+    id: discussion_description_title
+    attributes:
+      value: "## Full Description"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Detailed Description
+      description: Describe Platform, Device, Operating System, Versions, etc
+      placeholder: |
+        Try to be as specific and detailed as possible so that the circumstances of the bug
+        as encountered can be reproduced for debugging and fixing. There will like be continued
+        discussion as examination commences and continues.
+
+    validations:
+      required: true

@@ -1,0 +1,198 @@
+# Copyright (C) 2024 Innovate for Vegas Foundation
+# 
+# This file is part of doc-agile-for-volunteers.
+# 
+# doc-agile-for-volunteers is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# doc-agile-for-volunteers is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with doc-agile-for-volunteers.  If not, see <https://www.gnu.org/licenses/>.
+---
+name: Epic Plan
+description: Agile Epic for initiative design and planning, groups Features
+title: "[Epic]: Edit title after colon"
+labels:
+  - plan
+  - epic
+  - cp-ov
+  - triage
+projects:
+  - InnovateForVegas/9
+assignees:
+  - DanHugoDanHugo
+body:
+  - type: markdown
+    id: plan_head_title
+    attributes:
+      value: "# Agile Epic"
+
+  - type: markdown
+    id: plan_head_description
+    attributes:
+      value: |
+        An Epic is a collection of related Features which combine to form a
+        level of functionality within an Initiative **Theme**.
+        
+        One or more Epics will form the basis of one or more Agile Iterations. It is likely that any
+        Epic(s) will span more than a single Iteration, but this may vary.
+
+        We can describe an Epic directly as an **Objective** and **Key Results** (OKRs), with more granular
+        descriptions in each related **Feature**.
+
+  - type: markdown
+    id: plan_objective_title
+    attributes:
+      value: "## Epic Objective"
+        
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: A focused goal for this phase of the timeline
+      placeholder: A brief description of what we aim to accomplished in this phase of the Initiative Theme timeline
+    validations:
+      required: true
+
+  - type: markdown
+    id: plan_keyresults_title
+    attributes:
+      value: "## Key Results"
+        
+  - type: textarea
+    id: keyresults
+    attributes:
+      label: Key Results
+      description: A list of Key Results indicating success
+      placeholder: |
+        - A list of one or more measurable
+        - and demonstrably-achieved results
+        - Check off items in implementation(s)
+    validations:
+      required: true
+
+  - type: markdown
+    id: plan_linking_title
+    attributes:
+      value: "## Issue Linking"
+
+  - type: markdown
+    id: plan_linking_description
+    attributes:
+      value: |
+        Link issues by url (see info for issue linking bottom of page) to indicate
+        graph relationship between them, with tags in a list indicating the link relationship.
+
+        Tags and Linked Issues
+        - :theme --> the parent Theme in this Agile hierarchy for this Epic
+        - :feature --> a child Feature in this Agile hierarchy for this Epic
+        - :merge-to --> an Epic that is a merging of this and other Epic(s)
+        - :merge-from <-- an Epic that was merged into this Epic
+        - :split-to --> an Epic that is one of multiple Epics derived from this Epic
+        - :split-from <-- an Epic that was split into this and other Epics
+        - :spike-to --> a virtual Epic for planning and estimation of related Epics
+        - :spike-from <-- a real Epic connected to a virtual spike Epic
+
+        Merge-to and Split-to Epic issue(s) should be **Closed as Not Planned** in favor of the
+        consolidated or expanded Epic issue(s), as appropriate.
+        
+        Do not delete, mark as merge or split and **Closed as Not Planned**.
+
+  - type: textarea
+    id: linking
+    attributes:
+      label: Linked Issues
+      description: "Tag issue URLs with :theme , :epic , :merge-to, :split-from , etc"
+      placeholder: |
+        - :theme issue link within overview
+        - :merge-to this issue merges into a new issue
+        - :split-from this issue is one refactor from a parent Epic issue
+
+    validations:
+      required: false
+
+  - type: markdown
+    id: plan_issuegraph_title
+    attributes:
+      value: "## Issue Graph"
+
+  - type: markdown
+    id: plan_issuegraph_description
+    attributes:
+      value: |
+        A visualization of Linked Issues as indicated above, updated programmatically, please leave as is.
+
+        As issues are linked or removed, the visualization can be updated via automation.
+
+  - type: textarea
+    id: issuegraph
+    attributes:
+      label: Issue Graph
+      description: Do not edit, will update via automation
+      value: |
+        classDiagram
+          direction TB
+          class Epic {
+            Coming : Soon
+          }
+      render: mermaid
+
+  - type: markdown
+    id: plan_references_title
+    attributes:
+      value: "## References"
+        
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Place useful information close for implementors to find…
+      placeholder: |
+        - Links to resources to aid in implementation of Features attached to this Epic
+        - to External API Specifications, Accessibility Standards
+        - to Verification/Certification tools
+        - to Similar features in other Component Projects/Platforms
+
+    validations:
+      required: false
+
+  - type: markdown
+    id: plan_summary_title
+    attributes:
+      value: "## Rolling Summary"
+
+  - type: markdown
+    id: plan_summary_description
+    attributes:
+      value: |
+        Capture discussion ongoing on this issue and other learnings for continuous improvement
+        of this issue, this overall Initiative, or other Initiatives into the future!
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Rolling Summary
+      description: Pull discussion conclusions and update over time…
+      placeholder: |
+        Anything that appears in ongoing discussion and effort which may contribute to ongoing
+        success of this Theme or other parts of the Initiative effort.
+
+    validations:
+      required: false
+
+  - type: markdown
+    id: plan_helpful_title
+    attributes: 
+      value: "## Helpful Issue-filing Links"
+
+  - type: markdown
+    id: plan_helpful_description
+    attributes: 
+      value: |
+        - [Linking to Issues and PRs across Repositories](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls#issues-and-pull-requests)

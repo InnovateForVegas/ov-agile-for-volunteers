@@ -1,0 +1,101 @@
+# Copyright (C) 2024 Innovate for Vegas Foundation
+# 
+# This file is part of doc-agile-for-volunteers.
+# 
+# doc-agile-for-volunteers is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# doc-agile-for-volunteers is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with doc-agile-for-volunteers.  If not, see <https://www.gnu.org/licenses/>.
+---
+title: "[Feature Request]: Edit title after colon"
+labels:
+  - feature
+  - req
+  - cp-ov
+  - triage
+body:
+  - type: markdown
+    id: discussion_head_title
+    attributes:
+      value: "# Agile Feature Request"
+  
+  - type: markdown
+    id: discussion_head_description
+    attributes:
+      value: |
+        Our Agile Feature describes a reasonably specific operation, action, input, output, user
+        interface interaction, or general user (or automation) experience associated with an
+        Initiative Theme.
+
+        If the Initiative is an Office Suite and the Theme is a Spreadsheet component, an example
+        *Feature* might be autofill formulae or adjustable column and row sizes, etc.
+  
+  - type: markdown
+    id: discussion_shortdesc_title
+    attributes:
+      value: "## Short Description"
+  
+  - type: markdown
+    id: discussion_shortdesc_description
+    attributes:
+      value: |
+        The text entered here will be visible via mouse over in GitHub issue summary views
+        and may be extracted with automated tools for other uses.
+
+        Please be succinct, one paragraph.
+
+  - type: textarea
+    id: shortdesc
+    attributes:
+      label: Short Description
+      description: Expound succinctly on the Title of this Feature Request
+      placeholder: Useful paragraph visible in summary views
+
+    validations:
+      required: true
+
+  - type: markdown
+    id: discussion_objective_title
+    attributes:
+      value: "## Objective"
+
+  - type: markdown
+    id: discussion_objective_description
+    attributes:
+      value: |
+        Describe the objective(s) of your Feature Request, with details, examples found
+        elsewhere, use case scenarios, or anything else you may find valuable to begin
+        this discussion…
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: "A general description of the Feature you have named above"
+    validations:
+      required: true
+
+  - type: markdown
+    id: discussion_keyresults_title
+    attributes:
+      value: "## Key Results"
+
+  - type: textarea
+    id: keyresults
+    attributes:
+      label: Key Results
+      description: "At Least Three elements of your Feature Idea you would check"
+      placeholder: |
+        - A list of one or more measurable
+        - and demonstrably-achieved results
+        - Checked through the initiative timeline
+    validations:
+      required: true

@@ -1,0 +1,108 @@
+# Copyright (C) 2024 Innovate for Vegas Foundation
+# 
+# This file is part of doc-agile-for-volunteers.
+# 
+# doc-agile-for-volunteers is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# doc-agile-for-volunteers is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with doc-agile-for-volunteers.  If not, see <https://www.gnu.org/licenses/>.
+---
+title: "[Repository]: Edit title after colon"
+labels:
+  - repo
+  - cp-ov
+  - triage
+body:
+  - type: markdown
+    id: discussion_head_title
+    attributes:
+      value: "# Repository Questions, Concerns, Improvements"
+
+  - type: markdown
+    id: discussion_head_description
+    attributes:
+      value: |
+        Any observations or suggestions to make this Component Project Repository
+        function better, display information more clearly, be more easily discovered
+        and inspected, etc.
+
+  - type: markdown
+    id: discussion_shortdesc_title
+    attributes:
+      value: "## Short Description"
+
+  - type: markdown
+    id: discussion_shortdesc_description
+    attributes:
+      value: |
+        The text entered here will be visible via mouse over in GitHub issue summary views
+        and may be extracted with automated tools for other uses.
+
+        Please be succinct, one paragraph.
+        
+  - type: textarea
+    id: shortdesc
+    attributes:
+      label: Brief Description
+      description: Augments the issue title with an extended description
+
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why I created this discussion.
+      options:
+        - label: I would like to learn!
+        - label: Repository Structure
+        - label: Canonical Files (CODEOWNERS, LICENSE, CONTRIBUTORS, etc)
+        - label: Configuration (GitHub Options and Settings)
+        - label: Something else…
+
+  - type: markdown
+    id: discussion_detailref_title
+    attributes:
+      value: "## Detail and References"
+
+  - type: markdown
+    id: discussion_detailref_description
+    attributes:
+      value: |
+        This is where you add in a lengthy, more-detailed description of the concerns,
+        suggestions, ideas, whatever you have in mind. Diagrams, illustrations, or any
+        other supporting materials can be attached or linked as appropriate.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Detailed Description
+      description: Augments the issue title with an extended description
+      placeholder: |
+        Try to be as specific and detailed as possible so that the circumstances of this
+        discussion item can be addressed…
+
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Specific URLS, etc separated here to be more easily found
+      placeholder: |
+        - A list of URLS
+        - Or other references to
+        - Articles, Projects, Websites, etc
+
+    validations:
+      required: false

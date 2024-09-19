@@ -1,0 +1,279 @@
+# Copyright (C) 2024 Innovate for Vegas Foundation
+# 
+# This file is part of doc-agile-for-volunteers.
+# 
+# doc-agile-for-volunteers is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# doc-agile-for-volunteers is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with doc-agile-for-volunteers.  If not, see <https://www.gnu.org/licenses/>.
+---
+name: External Bug
+description: Observed Flaw captured from external report
+title: "[External Bug]: Edit title after colon"
+labels:
+  - extern
+  - bug
+  - cp-ov
+  - triage
+projects:
+  - InnovateForVegas/9
+assignees:
+  - DanHugoDanHugo
+body:
+  - type: markdown
+    id: bug_head_title
+    attributes:
+      value: "# External Bug"
+
+  - type: markdown
+    id: bug_head_description
+    attributes:
+      value: |
+        An external User or Customer may encounter a problem using or testing
+        some element(s) of the Initiative in whatever form they have had access
+        to it. We presume that a Bug Report may be filed externally and in fact
+        completely outside of the GitHub user account universe, sent via email,
+        or some other means, so that it may be ingested and stored in an Initiative-level
+        *External Bug* before it can be triaged and split into actual Defects.
+
+        One presumption is, an external User or Customer may not be familiar with the
+        details of an Initiative, nor perhaps the specific Component Project to which a
+        problem should be ascribed, so this is left to the internal Triage process.
+
+        If at all possible, the original filer(s) of issues should be apprised of the
+        status of their reported findings as they are addressed, and there is a case
+        to be made for inclusion of filers of such reports as contributors to
+        all or part of the Initiative (at their opt-in of course).
+
+  - type: markdown
+    id: bug_shortdesc_title
+    attributes:
+      value: "## Short Description"
+  
+  - type: markdown
+    id: bug_shortdesc_description
+    attributes:
+      value: |
+        The text entered here will be visible via mouse over in GitHub issue summary views
+        and may be extracted with automated tools for other uses.
+
+        Please be succinct, one paragraph.
+
+  - type: textarea
+    id: shortdesc
+    attributes:
+      label: Short Description
+      description: Expound on the Title of this External Bug item
+      placeholder: Useful information visible in summary views
+
+    validations:
+      required: true
+
+  - type: markdown
+    id: bug_characterization_title
+    attributes:
+      value: "## Characterization" 
+
+  - type: markdown
+    id: bug_characterization_description
+    attributes:
+      value: |
+
+        So that we can assess severity and priority scores, select at least one
+        of each item in the checkbox blocks below, for Observations and for
+        Frequency.
+
+        If you have more detail for these, please include it down below.
+
+  - type: checkboxes
+    id: observations
+    attributes:
+      label: Observations
+      description: Types of problems or failures observed
+      options:
+        - label: "Data Loss or Destructive Failure"
+        - label: "Crash or other self-contained Failure"
+        - label: "Unexpected behavior"
+        - label: "Explicitly incorrect behavior"
+        - label: "Does not meet expectations"
+        - label: "Untestable"
+        - label: "Cosmetic failure"
+        - label: "Security failure"
+        - label: "Privacy failure"
+
+
+  - type: checkboxes
+    id: frequency
+    attributes:
+      label: Frequency
+      description: Reproducing the observations
+      options:
+        - label: "Observed nearly 100% of the time"
+        - label: "Frequently but not consistently"
+        - label: "Infrequently but observable"
+        - label: "Difficult to observe, for unknown reasons"
+        - label: "Seems to depend on external factors"
+
+  - type: markdown
+    id: bug_usertype_title
+    attributes:
+      value: "## Submitter/Reporter as User Type"
+
+  - type: checkboxes
+    id: usertype
+    attributes:
+      label: User Type (As a …)
+      description: Who are we getting a report from? Check all which apply.
+      options:
+        - label: "**Unknown** user type, possibly not provided"
+        - label: "**Initiative Maintainer** Manages Initiatives and related elements"
+        - label: "**Initiative Member** Participates in Initiative as Whole Team member"
+        - label: "**Component Project Maintainer** Manages Component Projects and related elements"
+        - label: "**Component Project Member** Participates in Component Projects as Whole Team Member"
+        - label: "**Persistent Team Member** Participates on a regular ongoing basis"
+        - label: "**Atomic Team Member** Participates on irregular basis"
+        - label: "**External Contributor** Not a formal member of any Whole Team"
+        - label: "**Customer** Adopter of Agile for Volunteers"
+        - label: "**Curious User** Checking out Agile for Volunteers"
+        - label: "**Any or All** user types listed above"
+
+
+  - type: markdown
+    id: bug_description_title
+    attributes:
+      value: "## Full Description (Report Body)"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Full Description
+      description: Information as reported in full
+      placeholder: |
+        Actual Bug Report as submitted, as complete as possible, including a link
+        or other reference to the original report (if submitted via a public-facing
+        bug-report tool, etc)
+
+    validations:
+      required: true
+
+  - type: markdown
+    id: bug_reporter_title
+    attributes:
+      value: "## Bug Reporter Contact and Attribution"
+
+  - type: checkboxes
+    id: reporteropts
+    attributes:
+      label: Reporter Attribution
+      description: Select and update all that apply
+      options:
+        - label: Contact Information Available 
+        - label: Contact Information Redacted For Privacy
+        - label: Contact Reporter with Status Updates
+        - label: Attribution Information Available
+        - label: Attribute Contribution(s) to Reporter
+
+  - type: input
+    id: reportercontact
+    attributes:
+      label: Reporter Contact
+      description: "Name, Email, etc as needed for opt-in follow-up and contribution attribution"
+      placeholder: "Example: John Doe<jdoe@example.com>"
+    validations:
+      required: false
+
+  - type: markdown
+    id: bug_linking_title
+    attributes:
+      value: "## Issue Linking"
+
+  - type: markdown
+    id: bug_linking_description
+    attributes:
+      value: |
+        Link issues by url (see info for issue linking bottom of page) to indicate
+        graph relationship between them, with tags in a list indicating the link relationship.
+
+        Tags and Linked Issues
+        - :defect --> a Defect Issue in a Component Project repo derived from this External Bug Report
+        - :feature --> an Initiative Feature Issue derived from this External Bug report
+        - :story --> an Initiative Story Issue derived from this External Bug Report
+
+        External Bug issue(s) should be **Closed as Not Planned** after they are triaged and used to
+        link to existing and/or create new Initiative Feature or User Story issue(s) and/or Defect Issue(s)
+        in appropriate Component Project Repo(s).
+
+  - type: textarea
+    id: linking
+    attributes:
+      label: Linked Issues
+      description: "Tag issue URLs with :defect , :feature , or :story "
+      placeholder: |
+        - :defect issue link to a related component project repo
+        - :feature issue link to a new or related initiative feature
+        - :story issue link to a new or related initiative user story
+
+    validations:
+      required: false
+
+  - type: markdown
+    id: bug_issuegraph_title
+    attributes:
+      value: "## Issue Graph"
+
+  - type: markdown
+    id: bug_issuegraph_description
+    attributes:
+      value: |
+        A visualization of Linked Issues as indicated above, updated programmatically, please leave as is.
+
+        As issues are linked or removed, the visualization can be updated via automation.
+
+  - type: textarea
+    id: issuegraph
+    attributes:
+      label: Issue Graph
+      description: Do not edit, will update via automation
+      value: |
+        classDiagram
+          direction TB
+          class Ext Bug {
+            Coming : Soon
+          }
+      render: mermaid
+
+  - type: markdown
+    id: bug_retro_title
+    attributes:
+      value: "## Retrospective"
+
+  - type: textarea
+    id: retro
+    attributes:
+      label: Retrospective
+      description: To aid in iterative process improvement and learning
+      placeholder: |
+        Anything that may contribute to handling of other External Bug reports.
+
+    validations:
+      required: false
+
+  - type: markdown
+    id: bug_helpful_title
+    attributes: 
+      value: "## Helpful Issue-filing Links"
+
+  - type: markdown
+    id: bug_helpful_description
+    attributes: 
+      value: |
+        - [Linking to Issues and PRs across Repositories](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls#issues-and-pull-requests)
+

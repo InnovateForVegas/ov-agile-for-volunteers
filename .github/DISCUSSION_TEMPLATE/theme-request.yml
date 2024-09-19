@@ -1,0 +1,92 @@
+# Copyright (C) 2024 Innovate for Vegas Foundation
+# 
+# This file is part of doc-agile-for-volunteers.
+# 
+# doc-agile-for-volunteers is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# doc-agile-for-volunteers is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with doc-agile-for-volunteers.  If not, see <https://www.gnu.org/licenses/>.
+---
+title: "[Theme Request]: Edit title after colon"
+labels:
+  - theme
+  - req
+  - cp-ov
+  - triage
+body:
+  - type: markdown
+    id: discussion_head_title
+    attributes:
+      value: "# Agile Theme Request"
+
+  - type: markdown
+    id: discussion_head_description
+    attributes:
+      value: |
+        Our Agile Theme describes a broad, fairly general top-level application, service, etc.
+
+        If the Initiative is an Office Suite, a *Theme* might be a Spreadsheet component, described
+        in general terms without becoming overly concerned with finer details, which come later.
+
+  - type: markdown
+    id: discussion_shortdesc_title
+    attributes:
+      value: "## Short Description"
+  
+  - type: markdown
+    id: discussion_shortdesc_description
+    attributes:
+      value: |
+        The text entered here will be visible via mouse over in GitHub issue summary views
+        and may be extracted with automated tools for other uses.
+
+        Please be succinct, one paragraph.
+
+  - type: textarea
+    id: shortdesc
+    attributes:
+      label: Short Description
+      description: Expound succinctly on the Title of this Theme Request
+      placeholder: Useful paragraph visible in summary views
+
+    validations:
+      required: true
+
+  - type: markdown
+    id: discussion_objective_title
+    attributes:
+      value: "## Objective"
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: "A general description of the Theme you have named above"
+    validations:
+      required: true
+
+  - type: markdown
+    id: discussion_keyresults_title
+    attributes:
+      value: "## Key Results"
+
+  - type: textarea
+    id: keyresults
+    attributes:
+      label: Key Results
+      description: "At Least Three elements of your Theme Idea you would check"
+      placeholder: |
+        - A list of one or more measurable
+        - and demonstrably-achieved results
+        - Checked through the initiative timeline
+    validations:
+      required: true
+

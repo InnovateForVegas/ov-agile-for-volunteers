@@ -1,0 +1,34 @@
+# Copyright (C) 2024 Innovate for Vegas Foundation
+# 
+# This file is part of doc-agile-for-volunteers.
+# 
+# doc-agile-for-volunteers is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# doc-agile-for-volunteers is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with doc-agile-for-volunteers.  If not, see <https://www.gnu.org/licenses/>.
+
+blank_issues_enabled: false
+contact_links:
+  - name: "Discussion: External Bug"
+    url: https://github.com/InnovateForVegas/ov-agile-for-volunteers/discussions/categories/external-bug
+    about: GitHub Discussion about a bug reported to or gathered from external sources
+  - name: "Discussion: This Repository"
+    url: https://github.com/InnovateForVegas/ov-agile-for-volunteers/discussions/categories/repo
+    about: GitHub Discussion about this component project repository
+  - name: "Discussion: Initiative Feature Request"
+    url: https://github.com/InnovateForVegas/ov-agile-for-volunteers/discussions/categories/feature-request
+    about: GitHub Discussion for pondering new Initiative Features
+  - name: "Discussion: Initiative Theme Request"
+    url: https://github.com/InnovateForVegas/ov-agile-for-volunteers/discussions/categories/theme-request
+    about: GitHub Discussion for pondering broad Initiative Themes
+  - name: EXTERNAL example
+    url: https://example.com
+    about: Visit here for general discussion, future notions, etc

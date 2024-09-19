@@ -1,0 +1,246 @@
+# Copyright (C) 2024 Innovate for Vegas Foundation
+# 
+# This file is part of doc-agile-for-volunteers.
+# 
+# doc-agile-for-volunteers is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# doc-agile-for-volunteers is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with doc-agile-for-volunteers.  If not, see <https://www.gnu.org/licenses/>.
+---
+name: Story Plan
+description: Agile User story for initiative design and planning
+title: "[Story]: Edit title after colon"
+labels:
+  - plan
+  - story
+  - cp-ov
+  - triage
+projects:
+  - InnovateForVegas/9
+assignees:
+  - DanHugoDanHugo
+body:
+  - type: markdown
+    id: plan_head_title
+    attributes:
+      value: "# Agile User Story and the 3 Cs"
+
+  - type: markdown
+    id: plan_head_description
+    attributes:
+      value: |
+        1. Select a User Card (imagine index cards, one color per user type).
+        2. Describe in Conversation what this User would like to accomplish, with context, addressing concerns such as What and Why.
+        3. Describe in simple list form (not checkboxes) Confirmation that we met those expectations as Acceptance Criteria.
+
+        A user story is a description of what to do in somewhat abstract form, a task (issue) in a *related repository* will describe
+        implementation of a particular User Story including Confirmation checks, which are essentially concrete **Key Results**.
+        
+        Multiple tasks in multiple repositories may implement a User Story or Stories.
+
+        **Please compose Conversation and Confirmation elements in the first person, as though you are the selected User.**
+      
+  - type: markdown
+    id: plan_usertype_title
+    attributes:
+      value: "## Card"
+
+  - type: markdown
+    id: plan_usertype_description
+    attributes:
+      value: |
+        A particular Feature may have some nuanced requirements or expectations based on the type of User, their role, etc.
+
+        Select any or all which apply to these particular facets of a Feature description, but keep in mind that there
+        is usually a difference that could be missed if we assume everyone will need or want the same things…
+
+  - type: checkboxes
+    id: usertype
+    attributes:
+      label: User Type (As a …)
+      description: For whom are we making, be deliberate when choosing more than one.
+      options:
+        - label: "**Initiative Maintainer** Manages Initiatives and related elements"
+        - label: "**Initiative Member** Participates in Initiative as Whole Team member"
+        - label: "**Component Project Maintainer** Manages Component Projects and related elements"
+        - label: "**Component Project Member** Participates in Component Projects as Whole Team Member"
+        - label: "**Persistent Team Member** Participates on a regular ongoing basis"
+        - label: "**Atomic Team Member** Participates on irregular basis"
+        - label: "**External Contributor** Not a formal member of any Whole Team"
+        - label: "**Customer** Adopter of Agile for Volunteers"
+        - label: "**Curious User** Checking out Agile for Volunteers"
+
+  
+  - type: markdown
+    id: plan_conversation_title
+    attributes:
+      value: "## Conversation"
+
+  - type: textarea
+    id: conversation
+    attributes:
+      label: Objective (… I want/need to …)
+      description: What does the user hope to accomplish from their perspective?
+      placeholder: Background, Context, and Detail, optionally in list form, the results of discussion and pondering…
+    validations:
+      required: true
+
+  - type: markdown
+    id: plan_confirmation_title
+    attributes:
+      value: "## Confirmation"
+
+  - type: textarea
+    id: confirmation
+    attributes:
+      label: Key Results (… so that …)
+      placeholder: |
+        - A list
+        - of confirmable items
+        - describing Acceptance Criteria
+        - for this story
+      description: How do we determine whether we met User expectations?
+    validations:
+      required: true
+
+  - type: markdown
+    id: plan_linking_title
+    attributes:
+      value: "## Issue Linking"
+
+  - type: markdown
+    id: plan_linking_description
+    attributes:
+      value: |
+        Link issues by url (see info for issue linking bottom of page) to indicate
+        graph relationship between them, with tags in a list indicating the link relationship.
+
+        Tags and Linked Issues
+        - :feature --> the parent Feature in this Agile hierarchy for this User Story
+        - :task --> Implementation Task located in a separate repository
+        - :merge-to --> a User Story that is a merging of this and other User Stories
+        - :merge-from <-- a User Story that was merged into this User Story
+        - :split-to --> a User Story that is one of multiple User Stories derived from this User Stories
+        - :split-from <-- a User Story that was split into this and other User Stories
+        - :spike-to --> a virtual User Story for planning and estimation of related User Stories
+        - :spike-from <-- a real User Story connected to a virtual spike User Story
+
+        Merge-to and Split-to User Story issue(s) should be **Closed as Not Planned** in favor of the
+        consolidated or expanded User Story issue(s), as appropriate.
+        
+        Do not delete, mark as merge or split and **Closed as Not Planned**.
+
+  - type: textarea
+    id: linking
+    attributes:
+      label: Linked Issues
+      description: "Tag issue URLs with :epic , :task , :story , :merge-to , :split-from , etc"
+      placeholder: |
+        - :epic issue link within overview
+        - :merge-to this issue merges into a new issue
+        - :split-from this issue is one refactor from a parent Theme issue
+
+    validations:
+      required: false
+
+  - type: markdown
+    id: plan_issuegraph_title
+    attributes:
+      value: "## Issue Graph"
+
+  - type: markdown
+    id: plan_issuegraph_description
+    attributes:
+      value: |
+        A visualization of Linked Issues as indicated above, updated programmatically, please leave as is.
+
+        As issues are linked or removed, the visualization can be updated via automation.
+
+  - type: textarea
+    id: issuegraph
+    attributes:
+      label: Issue Graph
+      description: Do not edit, will update via automation
+      value: |
+        classDiagram
+          direction TB
+          class Story {
+            Coming : Soon
+          }
+      render: mermaid
+
+  - type: markdown
+    id: plan_references_title
+    attributes:
+      value: "## References"
+        
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Place useful information close for implementors to find…
+      placeholder: |
+        - Links to resources to aid in implementation of this User Story
+        - to External API Specifications, Accessibility Standards
+        - to Verification/Certification tools
+        - to Similar features in other Component Projects/Platforms
+
+    validations:
+      required: false
+
+  - type: markdown
+    id: plan_notes_title
+    attributes:
+      value: "## Notes"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Non-story knowledge and insight
+      placeholder: Useful information for planning and implementation, etc.
+    validations:
+      required: false
+
+  - type: markdown
+    id: plan_summary_title
+    attributes:
+      value: "## Rolling Summary"
+
+  - type: markdown
+    id: plan_summary_description
+    attributes:
+      value: |
+        Capture discussion ongoing on this issue and other learnings for continuous improvement
+        of this issue, this overall Initiative, or other Initiatives into the future!
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Rolling Summary
+      description: Pull discussion conclusions and update over time…
+      placeholder: |
+        Anything that appears in ongoing discussion and effort which may contribute to ongoing
+        success of this Theme or other parts of the Initiative effort.
+
+    validations:
+      required: false
+
+  - type: markdown
+    id: plan_helpful_title
+    attributes: 
+      value: "## Helpful Issue-filing Links"
+
+  - type: markdown
+    id: plan_helpful_description
+    attributes: 
+      value: |
+        - [Linking to Issues and PRs across Repositories](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls#issues-and-pull-requests)

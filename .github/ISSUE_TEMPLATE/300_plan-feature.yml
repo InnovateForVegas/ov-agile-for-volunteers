@@ -1,0 +1,196 @@
+# Copyright (C) 2024 Innovate for Vegas Foundation
+# 
+# This file is part of doc-agile-for-volunteers.
+# 
+# doc-agile-for-volunteers is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# doc-agile-for-volunteers is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with doc-agile-for-volunteers.  If not, see <https://www.gnu.org/licenses/>.
+---
+name: Feature Plan
+description: Agile Feature for initiative design and planning, groups User Stories
+title: "[Feature]: Edit title after colon"
+labels:
+  - plan
+  - feature
+  - cp-ov
+  - triage
+projects:
+  - InnovateForVegas/9
+assignees:
+  - DanHugoDanHugo
+body:
+  - type: markdown
+    id: plan_head_title
+    attributes:
+      value: "# Agile Feature"
+
+  - type: markdown
+    id: plan_head_description
+    attributes:
+      value: |
+        A **Feature** is a generalized behavior, experience, or expectation from a component of the Initiative.
+        
+        One or more User Stories will describe variations, subtleties, and specific considerations of a Feature,
+        including potentially-required use of specific standard protocols, file formats, interfaces, and so on.
+
+        We can describe a Feature directly as an **Objective** with measurable **Key Results** (OKRs).
+
+  - type: markdown
+    id: plan_objective_title
+    attributes:
+      value: "## Feature Objective"
+        
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: To be described in specific detail with one or more User Stories…
+      placeholder: A Feature might be an adjustable perpetual calendar, grouping more specific User Stories about month and year flipping, etc.
+    validations:
+      required: true
+
+  - type: markdown
+    id: plan_keyresults_title
+    attributes:
+      value: "## Key Results"
+        
+  - type: textarea
+    id: keyresults
+    attributes:
+      label: Key Results
+      description: A container holding a group of goals…
+      placeholder: |
+        - A list of one or more measurable
+        - and demonstrably-achieved results
+        - Check off items in implementation(s)
+    validations:
+      required: true
+
+  - type: markdown
+    id: plan_linking_title
+    attributes:
+      value: "## Issue Linking"
+
+  - type: markdown
+    id: plan_linking_description
+    attributes:
+      value: |
+        Link issues by url (see info for issue linking bottom of page) to indicate
+        graph relationship between them, with tags in a list indicating the link relationship.
+
+        Tags and Linked Issues
+        - :epic --> a parent Epic in this Agile hierarchy for this Feature
+        - :story --> a child User Story in this Agile Hierarchy for this Feature
+        - :merge-to --> a Feature that is a merging of this and other Feature(s)
+        - :merge-from <-- a Feature that was merged into this Feature
+        - :split-to --> a Feature that is one of multiple Features derived from this Feature
+        - :split-from <-- a Feature that was split into this and other Features
+        - :spike-to --> a virtual Feature for planning and estimation of related Features
+        - :spike-from <-- a real Theme connected to a virtual spike Theme
+
+        Merge-to and Split-to Feature issue(s) should be **Closed as Not Planned** in favor of the
+        consolidated or expanded Feature issue(s), as appropriate.
+        
+        Do not delete, mark as merge or split and **Closed as Not Planned**.
+
+  - type: textarea
+    id: linking
+    attributes:
+      label: Linked Issues
+      description: "Tag issue URLs with eg :epic , :story , :merge-to , :split-from , etc"
+      placeholder: |
+        - :epic issue link within overview
+        - :merge-to this issue merges into a new issue
+        - :split-from this issue is one refactor from a parent Theme issue
+
+    validations:
+      required: false
+
+  - type: markdown
+    id: plan_issuegraph_title
+    attributes:
+      value: "## Issue Graph"
+  
+  - type: markdown
+    id: plan_issuegraph_description
+    attributes:
+      value: |
+        A visualization of Linked Issues as indicated above, updated programmatically, please leave as is.
+
+        As issues are linked or removed, the visualization can be updated via automation.
+
+  - type: textarea
+    id: issuegraph
+    attributes:
+      label: Issue Graph
+      description: Do not edit, will update via automation
+      value: |
+        classDiagram
+          direction TB
+          class Feature {
+            Coming : Soon
+          }
+      render: mermaid
+
+  - type: markdown
+    id: plan_references_title
+    attributes:
+      value: "## References"
+        
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Place useful information close for implementors to find…
+      placeholder: |
+        - Links to resources to aid in implementation of User Stories attached to this Feature
+        - to External API Specifications, Accessibility Standards
+        - to Verification/Certification tools
+        - to Similar features in other Component Projects/Platforms
+
+    validations:
+      required: false
+
+  - type: markdown
+    id: plan_summary_title
+    attributes:
+      value: "## Rolling Summary"
+
+  - type: markdown
+    id: plan_summary_description
+    attributes:
+      value: |
+        Capture discussion ongoing on this issue and other learnings for continuous improvement
+        of this issue, this overall Initiative, or other Initiatives into the future!
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Rolling Summary
+      description: Pull discussion conclusions and update over time…
+      placeholder: |
+        Anything that appears in ongoing discussion and effort which may contribute to ongoing
+        success of this Theme or other parts of the Initiative effort.
+
+    validations:
+      required: false
+
+  - type: markdown
+    id: plan_helpful_title
+    attributes: 
+      value: "## Helpful Issue-filing Links"
+
+  - type: markdown
+    id: plan_helpful_description
+    attributes: 
+      value: |
+        - [Linking to Issues and PRs across Repositories](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls#issues-and-pull-requests)
