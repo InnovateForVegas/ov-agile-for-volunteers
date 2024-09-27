@@ -17,7 +17,7 @@
  along with ov-agile-for-volunteers.  If not, see <https://www.gnu.org/licenses/>.
 -->
 
-# Agile for Volunteers Initiative Blue Sky Documents (English Language)
+# Blue Sky - Agile for Volunteers Initiative - English
 
 Ideas and possibilities regarding the implementation of a collection of normative principles, methods, and best practices for enabling a cohort of Volunteers to make best use of their time, effort, and expertise toward making progress toward completion of Initiatives and Component Projects aimed at community elevation and other such things.
 
