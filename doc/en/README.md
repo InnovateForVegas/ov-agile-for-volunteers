@@ -23,6 +23,7 @@ Ideas and possibilities regarding the implementation of a collection of normativ
 
 | Component                              | Description                                                                         |
 |----------------------------------------|-------------------------------------------------------------------------------------|
+| [Introduction](introduction.md)        | Introductory materials to explain the Whats and Whys and so on                      |
 | [Documentation](documentation.md)      | As with Agile, it begins with a collection of ideas expressed as words              |
 | [Workflow UI/UX](workflow-uiux.md)     | Use tools and flow to guide contributors through the collaborative process          |
 | [Forms Management](formtools.md)       | Given a workflow UI/UX concept, edit and maintain its forms and templates           |
